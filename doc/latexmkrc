@@ -1,0 +1,8 @@
+$pdf_mode = 1;
+$bibtex_use = 2;
+$out_dir = "build";
+$aux_dir = "build";
+
+@default_files = ('0_main.tex');
+
+#$bibtex = 'BSTINPUTS=../vendor bibtex %O %B';
