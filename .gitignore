@@ -1,1 +1,6 @@
 tor/*
+img.raw
+dump/*
+*.mk
+*.swp
+doc/build/*
