@@ -1,11 +1,50 @@
 \section{Introduction}
 \label{sec:introduction}
+Each day people share personal information with their web
+browser. Browsers are partially retaining this information in order to
+become faster and more responsive. This data must, at some point, reside
+in memory before being discarded on program exit. Therefore, we
+believe that there are forensically relevant artifacts that can be
+extracted from a memory dump of such a browser process.
 
+Memory forensics is a heavily researched topic. Tools such as
+Volatility\footnote{\url{https://www.volatilityfoundation.org/}} have
+been developed that help with scanning and extraction of processes,
+files, registries, dynamic libraries, etc. However, less work has been
+done for single process dump analysis. Thus, there is a need for
+research to show that there is ``interesting'' data to be found in
+browser memory dumps and tooling that facilitates easy extraction of
+said artifacts. Optimistically, even whole DOM trees can be
+reconstructed for each open tab at the moment the memory image was
+done.
 
-For this purpose, we define the following research question:
-\textit{Question}
-We have the following sub questions:
+Some people are becoming more privacy aware and try to hide their
+online activities. However, there are also people using these same
+anonymization techniques in order to hide illigal activity. The Tor
+browser\footnote{\url{https://www.torproject.org/}} is a free software
+browser for enabling anonymous communcation. It's threat model
+protects against adversaries on the network, hence making remote
+analysis much harder or even impossible. For that reason, we believe
+that a memory analysis approach is an interesting angle for the
+forensic analysis of Tor browser.  \\
+
+For this purpose, we define the following research question and
+sub-questions that arise from it:
+
+\textit{Can we extract and perhaps reconstruct relevant Tor browser
+  information from memory dumps?}  \\
+
+Which leads to asking following sub-questions:
 \begin{enumerate}
-    \item sub 1
-    \item sub 2
+\item If the extraction of such data is possible, it is possible to
+  facilitate or even automate this process?
+\item Can we build a tool that makes extraction faster and easier?
+\end{enumerate}
+
+Since we are interested in the forensic significance of our research
+we have to consider the quality of the extracted data. This leads to
+another sub-question:
+\begin{enumerate}[resume]
+\item How sound is the data recovered given the context of the
+  investigation?
 \end{enumerate}
