@@ -130,6 +130,8 @@ class Element():
 			_bytes = read_from_map(_map, _off + a_uri_off, 8)
 			uri_ptr = struct.unpack("<Q", _bytes)[0]
 			
+			if uri_ptr == 0:
+				return
 			_map, _off = get_map_and_offset(uri_ptr)
 			_bytes = read_from_map(_map, _off + docuri_string_off, 8 + 4)
 			str_ptr, size = struct.unpack("<QI", _bytes)
@@ -145,6 +147,8 @@ class Element():
 			_bytes = read_from_map(_map, _off + video_uri_off, 8)
 			uri_ptr = struct.unpack("<Q", _bytes)[0]
 			
+			if uri_ptr == 0:
+				return
 			_map, _off = get_map_and_offset(uri_ptr)
 			_bytes = read_from_map(_map, _off + docuri_string_off, 8 + 4)
 			str_ptr, size = struct.unpack("<QI", _bytes)
@@ -160,6 +164,8 @@ class Element():
 			_bytes = read_from_map(_map, _off + img_uri_off, 8)
 			uri_ptr = struct.unpack("<Q", _bytes)[0]
 			
+			if uri_ptr == 0:
+				return
 			_map, _off = get_map_and_offset(uri_ptr)
 			_bytes = read_from_map(_map, _off + docuri_string_off, 8 + 4)
 			str_ptr, size = struct.unpack("<QI", _bytes)
