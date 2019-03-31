@@ -79,7 +79,7 @@ descendants. Later we apply the same technique to recover the
 DocumentElement\footnote{\url{https://dxr.mozilla.org/mozilla-esr60/source/dom/html/nsHTMLDocument.h}}.
 
 We need to detach from the process on step 7 because repeated
-errors occur. As we explained in a previous section Firefox uses more
+errors occur. As we explained in section~\ref{sec:methods}, Firefox uses more
 than one processes. Notably, it uses one process for the GUI and one
 process for each tab open. This means that the GUI and the tab
 processes have to communicate between them. When we attach to the tab

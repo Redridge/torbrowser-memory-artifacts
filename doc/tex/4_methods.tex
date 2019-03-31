@@ -1,3 +1,39 @@
 \section{Methods}
 \label{sec:methods}
 
+For our method to analyze Tor browser artifacts, we created a setup
+with a virtual machine and installed Ubuntu 18.04. Next, we installed
+the Tor Browser and browsed to a website. Then we created a memory
+image using LiME 1.8.1
+\footnote{\url{https://github.com/504ensicslabs/lime}}. The Tor
+browser virtual address space was afterwards extracted using
+Volatility 2.6.1
+\footnote{\url{https://www.volatilityfoundation.org/}}. This allowed
+us to acquire dumps containing Tor artifacts.
+
+%analyse documentation
+Firefox was extensively analyzed during this research. Firefox is
+written in multiple programming languages such as Python, C++, Rust
+and JavaScript. However, C++ powers most of the mission critical code
+with parts now being replaced with Rust. Firefox is also a large
+software project, with over 36 million lines of code
+\footnote{\url{https://www.openhub.net/p/firefox/analyses/latest/languages_summary}}.
+Most of the documentation relating to low-level Firefox functionality
+is scattered, not entry level friendly, and for JavaScript/web
+development. Therefore it was difficult understanding the complicated
+data structures and classes that make up Firefox, especially since most
+of them use inheritance, polymorphism, and nested classes. Mozilla
+also completed project Electrolysis in 2018
+\footnote{\url{https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Multiprocess_Firefox}}.
+This means that Firefox is now a fully multi-process web browser with
+inter-process communication. This allows for more security and
+sand-boxing, but makes analyzing the program harder. It consists of one
+process for GUI and a separate process per tab.
+
+%reverse engineering setup
+For reverse engineering and analyzing the browser we used GDB
+8.2.1-2. To gain a better understanding of what object we inspect, we
+downloaded Tor Browser 8.0.6 with debugging symbols. This provides
+additional information for executables.
+
+
