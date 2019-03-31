@@ -1,14 +1,14 @@
 \section{Related work}
 \label{sec:related_work}
 
-There has been some previous work on web browser artifacts. One
-research proved that it was possible to reconstruct video content
-played in Chrome browser by using locally buffered cache data on
-the hard drive. \cite{horsman2018reconstructing}
+There has been some previous work on analyzing web browser
+artifacts. One research proved that it is possible to reconstruct
+video content played in the Chrome browser by using locally buffered
+cache data on the hard drive. \cite{horsman2018reconstructing}
 
 Horsman also tried to prove if somebody viewed an image bases on the
 hard drive cache files of both Mozilla Firefox and Google
-Chrome. However, testing highlighted inconsistent cache behaviour,
+Chrome. However, testing highlighted inconsistent cache behavior,
 meaning that it may not possible to make an accurate assumption of
 which images were viewed by a user based on cached content alone.
 \cite{horsman2018didn}
@@ -18,12 +18,13 @@ private browser modes. All large web browsers were researched,
 e.g. Chrome, Firefox and Safari. The majority of important artifacts
 with regard to privacy are removed by the browsers, but users did not
 take into account the impact of artifacts with low or medium valuation
-being left behind \cite{tsalis2017exploring}. One of mitigations
+being left behind \cite{tsalis2017exploring}. One of mitigation's
 presented in this paper is storing data into the RAM. This decreases
 the chance of confidential data leaks. However, as we present in our
 paper, forensic experts can still extract artifacts from RAM,
-disproving the mitigation. Also, these three papers use cache located
-on the hard drive for finding artifacts.
+disproving this mitigation. Also, these three papers use cache located
+on the hard drive for finding artifacts as opposed to using the
+memory.
 
 A paper which resembles our technique, i.e. recovering artifacts from
 RAM, is the research done by Yang et al, where they managed to recover
@@ -34,6 +35,7 @@ perspective, but not so much from a forensic perspective.
 The most important related work is the work done by a previous
 Cybercrime and Forensics group in 2018. They managed to reconstruct
 the entire GUI of a Chromium-based browser from a memory image
-\cite{wikner2018reconstruct}. Their work is very interesting, but
+\cite{wikner2018reconstruct}. This work is very interesting, but
 unfortunately not suited for this project because it is focused on a
-different browser with different datastructures.
+different browser with different data structures and because it
+utilized previous work for reversing these data structures in memory.
